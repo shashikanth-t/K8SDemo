@@ -1,0 +1,25 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  labels: 
+    app: custom
+  name: custom-deployment
+spec: 
+  replicas: 2
+  selector: 
+    matchLabels: 
+      app: custom
+  template: 
+    metadata: 
+      labels: 
+        app: custom
+    spec: 
+      containers: 
+        - 
+          image: shashikantht/website
+          name: custom
+          ports: 
+            - 
+              containerPort: 80
+
